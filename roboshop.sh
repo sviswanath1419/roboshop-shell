@@ -6,7 +6,7 @@ INSTANCES=@{'mongodb','catalogue'}
 
 for i in $INSTANCES
 {
-    echo "EC2 is a  ec2 s1 $i"
+    echo "EC2 is a  ec2 $i"
 }
 
 aws ec2 run-instances --image-id AMI --count 2 --instance-type $INSTANCE_TYPE --key-name MyKeyPair --security-group-ids $SG --subnet-id subnet-xxxxxxxx
