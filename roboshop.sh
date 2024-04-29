@@ -7,7 +7,7 @@ INSTANCES=('mongodb') #'catalogue' "user" 'mysql' 'rabbitmq')
 for i in "${INSTANCES[@]}"
 {
     echo "EC2 is a  ec2 $i"
-    IP_ADDRESS=$(aws ec2 run-instances --image-id $AMI --instance-type $INSTANCE_TYPE --security-group-ids $SG --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$i}]" --query 'Instances[0].PrivateIpAddress' --output text)
+    IP_ADDRESS=$(aws ec2 run-instances --image-id $AMI --instance-type $INSTANCE_TYPE --security-group-ids $SG --tag-specifications --VpcId 	"vpc-00452ad0c57f2f148" "ResourceType=instance,Tags=[{Key=Name,Value=$i}]" --query 'Instances[0].PrivateIpAddress' --output text)
     echo "$i: $IP_ADDRESS"
 }
 
