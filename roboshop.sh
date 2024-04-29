@@ -2,7 +2,7 @@
 AMI="ami-0f3c7d07486cad139"
 SG="sg-0a082b6ef7bd6d1e4"
 INSTANCE_TYPE="t2.micro"
-INSTANCES=('mongodb' 'catalogue' "user" 'mysql' 'rabbitmq')
+INSTANCES=('mongodb') #'catalogue' "user" 'mysql' 'rabbitmq')
 
 for i in "${INSTANCES[@]}"
 {
